@@ -10,7 +10,7 @@ Each section below details the project's purpose and highlights the key modifica
 
 This project implements a self-learning agent for the game of Tic-Tac-Toe using a Reinforcement Learning approach.
 
-### ⚙️ **Key Modification: Transition from State-Value ($V(s)$) to Action-Value ($Q(s, a)$) Learning (SARSA Structure)**
+###  **Key Modification: Transition from State-Value ($V(s)$) to Action-Value ($Q(s, a)$) Learning (SARSA Structure)**
 
 The core change upgraded the agent from a basic Monte Carlo approach to a **Temporal Difference (TD) learning** structure, specifically using a **SARSA-like** update rule.
 
@@ -20,7 +20,7 @@ The core change upgraded the agent from a basic Monte Carlo approach to a **Temp
 | **Learning Rule** | Monte Carlo: Updates values only at the *end* of the game, propagating the final reward backward. | **SARSA:** Updates the value *after every move* using the TD error: $Q(S, A) \leftarrow Q(S, A) + \alpha [ R + \gamma \cdot Q(S', A') - Q(S, A) ]$. |
 | **Update Timing**| End of episode (Game Over). | **After every state transition** (Move by the opponent). |
 
-### 📈 **Key Modification: Dynamic Exploration Rate ($\epsilon$-Decay)**
+###  **Key Modification: Dynamic Exploration Rate ($\epsilon$-Decay)**
 
 A dynamic exploration rate was introduced to manage the exploration-exploitation trade-off during training.
 
@@ -35,7 +35,7 @@ A dynamic exploration rate was introduced to manage the exploration-exploitation
 
 This project implemented and modernized the classical AlexNet Convolutional Neural Network (CNN) for image classification.
 
-### ⚙️ **Key Modification: Architectural Stabilization (Batch Normalization)**
+###  **Key Modification: Architectural Stabilization (Batch Normalization)**
 
 Batch Normalization (BN) layers were strategically added to stabilize and accelerate training.
 
@@ -45,7 +45,7 @@ Batch Normalization (BN) layers were strategically added to stabilize and accele
 | **Conv/Dense** | Used `Conv2D(..., activation='relu')`. | Split into `Conv2D(...) -> BatchNormalization() -> Activation('relu')`. |
 | **Benefit** | Reduces Internal Covariate Shift, allowing for faster convergence and acting as a mild regularizer. |
 
-### ⚙️ **Key Modification: Keras Best Practice (Explicit Input Layer)**
+###  **Key Modification: Keras Best Practice (Explicit Input Layer)**
 
 The model definition was updated to conform to modern Keras best practices, resolving a `UserWarning`.
 
@@ -60,7 +60,7 @@ The model definition was updated to conform to modern Keras best practices, reso
 
 This project used a Recurrent Neural Network (RNN) to forecast the International Airline Passengers dataset.
 
-### ⚙️ **Key Modification: Increased Depth and Capacity (Stacked LSTMs)**
+###  **Key Modification: Increased Depth and Capacity (Stacked LSTMs)**
 
 The model was significantly enhanced by transitioning from a single layer to a deeper, stacked architecture.
 
@@ -71,7 +71,7 @@ The model was significantly enhanced by transitioning from a single layer to a d
 | **Capacity** | 10 LSTM units. | **50 LSTM units** per layer. |
 | **Training** | 50 epochs. | **100 epochs** (to allow the deeper model to fully converge). |
 
-### ⚙️ **Key Modification: Regularization**
+###  **Key Modification: Regularization**
 
 | Feature | Original Code | Modified Code |
 | :--- | :--- | :--- |
@@ -84,7 +84,7 @@ The model was significantly enhanced by transitioning from a single layer to a d
 
 This project focused on binary image classification using a CNN architecture with the Cats vs. Dogs dataset.
 
-### ⚙️ **Key Modification: Data Augmentation**
+###  **Key Modification: Data Augmentation**
 
 The most critical change was implementing data augmentation to fight overfitting on the limited dataset.
 
@@ -93,7 +93,7 @@ The most critical change was implementing data augmentation to fight overfitting
 | **Data Augmentation** | Only `rescale = 1.0/255.`. | **Added:** `rotation_range=40`, `width_shift_range=0.2`, `zoom_range=0.2`, `horizontal_flip=True`, etc. |
 | **Benefit** | Artificially expands the training dataset, significantly improving the model's ability to generalize. |
 
-### ⚙️ **Key Modification: Increased Model Capacity and Dropout**
+###  **Key Modification: Increased Model Capacity and Dropout**
 
 The base CNN architecture was deepened and widened.
 
@@ -104,7 +104,7 @@ The base CNN architecture was deepened and widened.
 | **Hidden Layer** | `Dense(512)`. | **`Dense(1024)`**. |
 | **Regularization** | No Dropout before Dense. | **Added `Dropout(0.5)`** before the first Dense layer. |
 
-### ⚙️ **Fixes for Google Colab Execution**
+###  **Fixes for Google Colab Execution**
 
   * Corrected the usage of local Windows file paths to use Colab's relative paths (`/content/`).
   * Added the `!unzip` shell command for robust file extraction in the Colab environment.
@@ -116,7 +116,7 @@ The base CNN architecture was deepened and widened.
 
 This project used a recurrent network for next-character prediction and text generation.
 
-### ⚙️ **Key Modification: Advanced RNN Architecture (LSTM & Stacking)**
+###  **Key Modification: Advanced RNN Architecture (LSTM & Stacking)**
 
 The simple `SimpleRNN` layer was replaced with more modern, robust layers.
 
